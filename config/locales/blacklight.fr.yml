@@ -328,7 +328,7 @@ fr:
       all_fields:
         label: Tous
       serial_title:
-        label: Titre du périodique ou journal
+        label: Collection
       archival_ref:
         label: Référence archivistique
       summary:

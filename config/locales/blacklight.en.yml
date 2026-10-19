@@ -344,7 +344,7 @@ en:
       all_fields:
         label: All Fields
       serial_title:
-        label: Periodical / Newspaper Title
+        label: Collection
       archival_ref:
         label: Archival Reference
       summary:

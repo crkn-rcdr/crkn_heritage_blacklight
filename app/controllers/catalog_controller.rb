@@ -180,19 +180,19 @@ class CatalogController < ApplicationController
       }
     }
     
+    config.add_facet_field 'serial_title_str',
+                           label: ->(_c) { I18n.t('blacklight.metadata.serial_title.label') },
+                           component: CheckboxFacetComponent,
+                           tag: 'tag_serial_title_str',
+                           ex: 'tag_serial_title_str',
+                           sort: 'count', limit: 8, suggest: true, index_range: true
+
     config.add_facet_field 'resource_type_ssim_str',
                            label: ->(_c) { I18n.t('blacklight.metadata.resource_type.label') },
                            helper_method: :format_resource_type_label,
                            component: CheckboxFacetComponent,
                            tag: 'tag_resource_type_ssim_str',
                            ex: 'tag_resource_type_ssim_str',
-                           sort: 'count', limit: 8, suggest: true, index_range: true
-                           
-    config.add_facet_field 'serial_title_str',
-                           label: ->(_c) { I18n.t('blacklight.metadata.serial_title.label') },
-                           component: CheckboxFacetComponent,
-                           tag: 'tag_serial_title_str',
-                           ex: 'tag_serial_title_str',
                            sort: 'count', limit: 8, suggest: true, index_range: true
 
 
