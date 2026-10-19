@@ -349,7 +349,7 @@ fr:
           sub_unit: Bobine
           reel: Bobine
       include_issues:
-        label: Inclure les résultats des numéros individuels
+        label: Inclure les résultats des bobines individuelles
     sort:
       relevance:
         label: Pertinence

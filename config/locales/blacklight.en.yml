@@ -365,7 +365,7 @@ en:
           sub_unit: Reel
           reel: Reel
       include_issues:
-        label: Include results from individual issues
+        label: Include results from individual reels
     sort:
       relevance:
         label: Relevance
