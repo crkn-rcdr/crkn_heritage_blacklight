@@ -204,6 +204,7 @@ class CatalogController < ApplicationController
     #config.add_index_field 'title_ssm',  label: ->(_f, _c) { I18n.t('blacklight.metadata.title.label') }, helper_method: :format_text
     config.add_index_field 'author_ssm', label: ->(_f, _c) { I18n.t('blacklight.metadata.creator.label') }, helper_method: :format_facet
     config.add_index_field 'published_ssm', label: ->(_f, _c) { I18n.t('blacklight.metadata.date_range.label', default: 'Date of Creation') }
+    config.add_index_field 'dates_or_sequential_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.dates_or_sequential.label') }, helper_method: :format_text
     config.add_index_field 'subject_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.subject.label') }, helper_method: :format_facet
     config.add_index_field 'language_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.language.label') }, helper_method: :format_facet
     config.add_index_field 'depositor_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.depositor.label') }, helper_method: :format_facet
@@ -230,6 +231,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'subject_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.subject.label') }, helper_method: :format_facet
     config.add_show_field 'depositor_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.depositor.label') }, helper_method: :format_facet
     config.add_show_field 'published_ssm', label: ->(_f, _c) { I18n.t('blacklight.metadata.date_range.label', default: 'Date of Creation') }
+    config.add_show_field 'dates_or_sequential_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.dates_or_sequential.label') }, helper_method: :format_text
     config.add_show_field 'id', label: ->(_f, _c) { I18n.t('blacklight.metadata.id.label') }, helper_method: :format_identifier
     #config.add_show_field 'pub_date_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.date.label') }
     config.add_show_field 'summary_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.summary.label') }, helper_method: :format_text
