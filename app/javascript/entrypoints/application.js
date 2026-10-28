@@ -1290,8 +1290,8 @@ function adjustCatalogShowBreadcrumbActions() {
     viewAllIssuesIcon.setAttribute('aria-hidden', 'true');
     const viewAllIssuesLabel = document.createElement('span');
     viewAllIssuesLabel.textContent = isFr
-      ? `Voir tous les numéros de "${serialTitle || 'ce titre de périodique'}"`
-      : `View all issues of "${serialTitle || 'this serial title'}"`;
+      ? `Toutes les bobines dans "${serialTitle || 'cette collection'}"`
+      : `All reels in "${serialTitle || 'this collection'}"`;
     viewAllIssues.append(viewAllIssuesIcon, viewAllIssuesLabel);
     actionRow.insertBefore(viewAllIssues, actionRow.firstChild);
   }

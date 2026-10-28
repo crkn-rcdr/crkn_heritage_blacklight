@@ -82,7 +82,7 @@
               <% if @document._source["is_serial"]&.first == "Yes" %>
                 <% issue_count = collection_items_comp&.total_items || helpers.serial_issue_count(@document._source['id'] || params[:id]) %>
                 <div class="serial-available-issues mt-2 mb-3">
-                  <span class="citation-toolbar-title"><%= t('labels.L_AVAILABLE_ISSUES', default: 'Available Issues') %>:</span>
+                  <span class="citation-toolbar-title"><%= t('labels.L_AVAILABLE_ISSUES', default: 'Available reels') %>:</span>
                   <span class=""><%= number_with_delimiter(issue_count) %></span>
                 </div>
               <% end %>
@@ -319,7 +319,7 @@
                   <div id="my-mirador" data-lenis-prevent data-docid="<%= @document._source['ark'] %>"></div>
                   
                 <% else %>
-                  <img src="/assets/404.webp" class="not-found-icon" alt="Item image unavailable" />
+                  <img src="/assets/404.webp" class="not-found-icon" alt="This page is dead | oocihm.8_06911_57.1" />
                   <p>Sorry, there was a problem loading the images for this item.</p>
                 <% end %>
 

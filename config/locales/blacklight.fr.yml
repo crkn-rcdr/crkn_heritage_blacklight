@@ -2,6 +2,7 @@
 fr:
   blacklight:
     range_limit:
+      missing: "[Aucune date enregistrée]"
       submit_limit: Appliquer
       range_list_heading: Répartition des intervalles
       range_begin: Début de l'intervalle
@@ -160,7 +161,7 @@ fr:
         group:
           close: Masquer les facettes
           open: Afficher les facettes
-        missing: "[manquante]"
+        missing: "[Aucune date enregistrée]"
         no_matches: "Aucun élément correspondant trouvé."
         more_html: plus <span class="visually-hidden">%{field_name}</span> »
         pivot:
@@ -288,7 +289,7 @@ fr:
       published:
         label: Publication
       dates_or_sequential:
-        label: Dates de publication et/ou désignation séquentielle
+        label: Volumes
       date:
         label: Date de numérisation
       id:
@@ -317,6 +318,18 @@ fr:
         label: Est-ce une publication en série
       issue_msg:
         label: Est un numéro d'une publication en série
+      theme:
+        label: Thèmes
+      varying_title:
+        label: Variante du titre
+      complex_linking_note:
+        label: Note sur les documents connexes
+      title_added_entry:
+        label: Titre additionnel
+      place_added_entry:
+        label: Lieu associé
+      related_items:
+        label: Documents connexes
       date_added:
         label: Date d'ajout/mise à jour
       language:
@@ -326,7 +339,7 @@ fr:
       description:
         label: Description
       date_range:
-        label: Date de création
+        label: Date(s) de création
       all_fields:
         label: Tous
       serial_title:
@@ -403,13 +416,13 @@ fr:
     L_LAC: Bibliothèque et Archives Canada
     L_NEW : Quoi de neuf
     L_READ_MORE: Lire la suite
-    L_RECORD: À propos de cet article
-    L_SERIAL_RECORD: À propos de cette série
-    L_AVAILABLE_ISSUES: Numéros disponibles
+    L_RECORD: À propos de cette bobine
+    L_SERIAL_RECORD: À propos
+    L_AVAILABLE_ISSUES: Bobines disponibles
     L_SEARCH_BREADCRUMB: Recherche dans la collection
     L_ALL_ISSUES: Liste des numéros
     L_VIEW_ISSUE: Voir le numéro
-    L_NO_ISSUES_MSG: Aucun problème dans cette série
+    L_NO_ISSUES_MSG: Aucune bobine dans cette collection
     L_TERMS: Conditions de service
     L_MATCHING_PAGES_PRE: Résultats de la recherche en texte intégral pour
     L_MATCHING_PAGES_SUF: dans cet élément
