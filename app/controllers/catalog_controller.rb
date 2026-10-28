@@ -166,34 +166,29 @@ class CatalogController < ApplicationController
     #                       label: 'Materials',
     #                       sort: 'count', limit: 8, suggest: true, index_range: true
 
-    # Hierarchical Collections facet (uses slash-delimited paths in collectionen_path / collectionfr_path)
+    # Collection facet (single CheckboxFacetComponent, not hierarchical)
     config.add_facet_field 'collectionen_path',
-      label:  ->(_c) { I18n.t('blacklight.metadata.collection.label') },
-      component: Blacklight::Hierarchy::FacetFieldListComponent,
-      tag: 'tag_collectionen_path',
-      ex: 'tag_collectionen_path',
-      if: ->(context, _config, _facet = nil) { CatalogController.language_code_for(context) != 'fr' }
-    config.add_facet_field 'collectionfr_path',
-      label:  ->(_c) { I18n.t('blacklight.metadata.collection.label') },
-      component: Blacklight::Hierarchy::FacetFieldListComponent,
-      tag: 'tag_collectionfr_path',
-      ex: 'tag_collectionfr_path',
-      if: ->(context, _config, _facet = nil) { CatalogController.language_code_for(context) == 'fr' }
-    # Tell blacklight-hierarchy how to parse the field into a tree (use slash delimiter)
-    # key is the field name prefix before the last underscore
-    config.facet_display = {
-      hierarchy: {
-        'collectionen' => [['path'], '/'],
-        'collectionfr' => [['path'], '/']
-      }
-    }
-    
-    config.add_facet_field 'serial_title_str',
-                           label: ->(_c) { I18n.t('blacklight.metadata.serial_title.label') },
+                           label: ->(_c) { I18n.t('blacklight.metadata.collection.label') },
                            component: CheckboxFacetComponent,
-                           tag: 'tag_serial_title_str',
-                           ex: 'tag_serial_title_str',
-                           sort: 'count', limit: 8, suggest: true, index_range: true
+                           tag: 'tag_collectionen_path',
+                           ex: 'tag_collectionen_path',
+                           sort: 'count', limit: 8, suggest: true, index_range: true,
+                           if: ->(context, _config, _facet = nil) { CatalogController.language_code_for(context) != 'fr' }
+    config.add_facet_field 'collectionfr_path',
+                           label: ->(_c) { I18n.t('blacklight.metadata.collection.label') },
+                           component: CheckboxFacetComponent,
+                           tag: 'tag_collectionfr_path',
+                           ex: 'tag_collectionfr_path',
+                           sort: 'count', limit: 8, suggest: true, index_range: true,
+                           if: ->(context, _config, _facet = nil) { CatalogController.language_code_for(context) == 'fr' }
+
+    # Second collection facet (serial_title_str) hidden per user request
+    # config.add_facet_field 'serial_title_str',
+    #                        label: ->(_c) { I18n.t('blacklight.metadata.serial_title.label') },
+    #                        component: CheckboxFacetComponent,
+    #                        tag: 'tag_serial_title_str',
+    #                        ex: 'tag_serial_title_str',
+    #                        sort: 'count', limit: 8, suggest: true, index_range: true
 
     config.add_facet_field 'resource_type_ssim_str',
                            label: ->(_c) { I18n.t('blacklight.metadata.resource_type.label') },
@@ -212,11 +207,11 @@ class CatalogController < ApplicationController
                            ex: 'tag_has_full_text',
                            query: {
                              available: {
-                               label: 'available',
+                               label: 'Available',
                                fq: 'tx_gen:[* TO *]'
                              },
                              not_available: {
-                               label: 'not_available',
+                               label: 'Not Available',
                                fq: '(*:* -tx_gen:[* TO *])'
                              }
                            }
