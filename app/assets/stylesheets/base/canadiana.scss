@@ -1,5 +1,6 @@
 :root {
-  --theme-primary: #1d808b;
+  --theme-primary: #338500;
+  --theme-primary-hover: #286b00;
   --theme-bg: white;
   --bs-light-rgb: var(--theme-bg);
   --bs-dark-rgb: var(--theme-bg);
@@ -1851,8 +1852,24 @@ dialog#blacklight-modal,
 .facet-limit .collapse-toggle:focus-visible {
   box-shadow: 0 0 0 3px rgba(29, 128, 139, 0.18);
 }
-.facet-limit-active .card-header .btn {
-  color: #1d808b;
+.facet-limit-active {
+  border-color: var(--theme-primary, #1d808b) !important;
+}
+.facet-limit-active .card-header .btn,
+.facet-limit-active .collapse-toggle,
+.facet-limit-active .facet-field-heading button {
+  color: var(--theme-primary, #1d808b) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--theme-primary, #1d808b) !important;
+  border-color: var(--theme-primary, #1d808b) !important;
+}
+
+.facet-limit .selected,
+.facet-values .selected,
+.facet-label .selected {
+  color: var(--theme-primary, #1d808b) !important;
 }
 .facet-limit .facet-content {
   border-top: 1px solid rgba(0, 0, 0, 0.06);
@@ -11245,8 +11262,8 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
   overflow-x: clip;
   padding: clamp(1.35rem, 2vw, 1.8rem) 0 clamp(3.15rem, 4.5vw, 4.2rem);
   background:
-    linear-gradient(180deg, rgba(29, 128, 139, 0.9) 34%, rgba(55, 191, 206, 0.9) 100%),
-    image-url("backgrounds/canadiana/oocihm.8_04048_394.31.jpg") center 38% / cover no-repeat;
+    linear-gradient(180deg, rgba(51, 113, 11, 0.85) 34%, rgba(95, 192, 35, 0.85) 100%),
+    image-url("backgrounds/heritage/oocihm.lac_reel_c13421.54.jpg") center 38% / cover no-repeat;
   clip-path: polygon(
     0 0,
     100% 0,
@@ -11283,8 +11300,8 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
   pointer-events: none;
   z-index: 0;
   background:
-    linear-gradient(180deg, rgba(11, 70, 79, 0.12) 0%, rgba(11, 70, 79, 0.12) 100%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+    linear-gradient(180deg, rgba(14, 58, 10, 0.16) 0%, rgba(14, 58, 10, 0.16) 100%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .blacklight-catalog-index .catalog-search-hero > .canadiana-shell {
@@ -11358,9 +11375,9 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
 }
 
 .blacklight-catalog-index .catalog-search-hero__search-form:focus-within {
-  border-color: rgba(29, 128, 139, 0.45);
+  border-color: rgba(67, 136, 15, 0.45);
   box-shadow:
-    0 0 0 3px rgba(29, 128, 139, 0.12),
+    0 0 0 3px rgba(67, 136, 15, 0.12),
     0 10px 24px rgba(15, 24, 33, 0.08);
 }
 
@@ -11410,7 +11427,7 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
 }
 
 .blacklight-catalog-index .catalog-search-hero__submit {
-  background: #4c8893;
+  background: #43880f;
   color: #ffffff;
   font-size: clamp(1.05rem, 1.08vw, 1.22rem);
   font-weight: 700;
@@ -11420,7 +11437,7 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
 
 .blacklight-catalog-index .catalog-search-hero__submit:hover,
 .blacklight-catalog-index .catalog-search-hero__submit:focus-visible {
-  background: #3f747e;
+  background: #2d6d08;
 }
 
 .blacklight-catalog-index .catalog-search-hero__applied-shell {
@@ -11756,6 +11773,133 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
   border-radius: 3px !important;
 }
 
+/* Heritage catalogue buttons follow the Canadiana outline/primary pattern. */
+:is(body.blacklight-catalog-index, body.blacklight-catalog-show) {
+  --theme-primary: #338500;
+  --bs-link-color: #338500;
+  --bs-link-hover-color: #286b00;
+}
+
+.blacklight-catalog-index .btn-outline-secondary,
+.blacklight-catalog-index .btn-outline-custom,
+.blacklight-catalog-index .view-all-issues-link,
+.blacklight-catalog-index .search-widgets .btn,
+.blacklight-catalog-index .search-widgets .dropdown-toggle,
+.blacklight-catalog-index #sortAndPerPage .btn,
+.blacklight-catalog-index #sortAndPerPage .dropdown-toggle,
+.blacklight-catalog-index .pagination-search-widgets .btn,
+.blacklight-catalog-show .catalog-show-breadcrumb-row .view-all-issues-link,
+.blacklight-catalog-show .catalog-show-breadcrumb-row .btn {
+  border-color: #338500 !important;
+  color: #338500 !important;
+  background-color: #ffffff;
+}
+
+.blacklight-catalog-index .btn-outline-secondary:hover,
+.blacklight-catalog-index .btn-outline-secondary:focus-visible,
+.blacklight-catalog-index .btn-outline-custom:hover,
+.blacklight-catalog-index .btn-outline-custom:focus-visible,
+.blacklight-catalog-index .view-all-issues-link:hover,
+.blacklight-catalog-index .view-all-issues-link:focus-visible,
+.blacklight-catalog-show .catalog-show-breadcrumb-row .view-all-issues-link:hover,
+.blacklight-catalog-show .catalog-show-breadcrumb-row .view-all-issues-link:focus-visible {
+  border-color: #286b00 !important;
+  color: #286b00 !important;
+}
+
+/* Breadcrumbs are collection navigation; the issue back action stays neutral. */
+.blacklight-catalog-show .collection-breadcrumbs .breadcrumb-item a {
+  color: #338500 !important;
+}
+
+.blacklight-catalog-show .collection-breadcrumbs .breadcrumb-item a:hover,
+.blacklight-catalog-show .collection-breadcrumbs .breadcrumb-item a:focus-visible {
+  color: #286b00 !important;
+}
+
+.blacklight-catalog-show .catalog-show-breadcrumb-row .view-all-issues-link {
+  color: #25303a !important;
+  border-color: #bec7d2 !important;
+}
+
+.blacklight-catalog-show .catalog-show-breadcrumb-row .view-all-issues-link .bi,
+.blacklight-catalog-show .catalog-show-breadcrumb-row .view-all-issues-link i {
+  color: #3b4450 !important;
+}
+
+.blacklight-catalog-index .btn-primary,
+.blacklight-catalog-index .search-btn,
+.blacklight-catalog-index .catalog-search-hero__submit,
+.blacklight-catalog-index input[type="submit"],
+.blacklight-catalog-index .facet-limit .range-limit-input-group .submit.btn,
+.blacklight-catalog-index .checkbox-facet-apply,
+.blacklight-catalog-show .btn-primary,
+.blacklight-catalog-show .search-btn,
+.blacklight-catalog-show input[type="submit"] {
+  background-color: #338500 !important;
+  border-color: #338500 !important;
+  color: #ffffff !important;
+}
+
+.blacklight-catalog-index .btn-primary:hover,
+.blacklight-catalog-index .btn-primary:focus-visible,
+.blacklight-catalog-index .search-btn:hover,
+.blacklight-catalog-index .search-btn:focus-visible,
+.blacklight-catalog-index .catalog-search-hero__submit:hover,
+.blacklight-catalog-index .catalog-search-hero__submit:focus-visible,
+.blacklight-catalog-index input[type="submit"]:hover,
+.blacklight-catalog-index input[type="submit"]:focus-visible,
+.blacklight-catalog-index .facet-limit .range-limit-input-group .submit.btn:hover,
+.blacklight-catalog-index .facet-limit .range-limit-input-group .submit.btn:focus-visible,
+.blacklight-catalog-index .checkbox-facet-apply:hover,
+.blacklight-catalog-index .checkbox-facet-apply:focus-visible,
+.blacklight-catalog-show .btn-primary:hover,
+.blacklight-catalog-show .btn-primary:focus-visible,
+.blacklight-catalog-show .search-btn:hover,
+.blacklight-catalog-show .search-btn:focus-visible,
+.blacklight-catalog-show input[type="submit"]:hover,
+.blacklight-catalog-show input[type="submit"]:focus-visible {
+  background-color: #286b00 !important;
+  border-color: #286b00 !important;
+  color: #ffffff !important;
+}
+
+.blacklight-catalog-index .pagination,
+.blacklight-catalog-show .pagination {
+  --bs-pagination-active-bg: #338500;
+  --bs-pagination-active-border-color: #338500;
+  --bs-pagination-active-color: #ffffff;
+}
+
+.blacklight-catalog-index .page-item.active .page-link,
+.blacklight-catalog-show .page-item.active .page-link {
+  color: #ffffff !important;
+}
+
+.blacklight-catalog-index .facet-limit-active {
+  border-color: #338500 !important;
+}
+.blacklight-catalog-index .facet-limit-active .card-header .btn,
+.blacklight-catalog-index .facet-limit-active .collapse-toggle,
+.blacklight-catalog-index .facet-limit-active .facet-field-heading button,
+.blacklight-catalog-show .facet-limit-active .card-header .btn,
+.blacklight-catalog-show .facet-limit-active .collapse-toggle,
+.blacklight-catalog-show .facet-limit-active .facet-field-heading button {
+  color: #338500 !important;
+}
+
+.blacklight-catalog-index .form-check-input:checked,
+.blacklight-catalog-show .form-check-input:checked {
+  background-color: #338500 !important;
+  border-color: #338500 !important;
+}
+
+.blacklight-catalog-index .facet-limit .selected,
+.blacklight-catalog-index .facet-values .selected,
+.blacklight-catalog-index .facet-label .selected {
+  color: #338500 !important;
+}
+
 /* Sticky Feedback Banner at Bottom of Viewport */
 .feedback-sticky-banner {
   position: fixed;
@@ -11827,4 +11971,3 @@ body.has-feedback-banner {
     padding-bottom: 5.25rem;
   }
 }
-
