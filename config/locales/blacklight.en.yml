@@ -2,6 +2,7 @@
 en:
   blacklight:
     range_limit:
+      missing: "[No date recorded]"
       submit_limit: Apply
       range_list_heading: Date Range Listing
       range_begin: Range Start
@@ -84,7 +85,7 @@ en:
       or_html: " OR "
       page_title: Advanced search - %{application_name}
     and: and
-    application_name: Canadiana
+    application_name: Héritage Collection
     back_to_bookmarks: Back to Bookmarks
     back_to_search: Back to Search
     breadcrumbs:
@@ -185,7 +186,7 @@ en:
         group:
           close: Hide facets
           open: Show facets
-        missing: "[Missing]"
+        missing: "[No date recorded]"
         no_matches: "No matching items found."
         more_html: more <span class="visually-hidden">%{field_name}</span> »
         pivot:
@@ -314,7 +315,7 @@ en:
       published:
         label: Published
       dates_or_sequential:
-        label: Dates of Publication and/or Sequential Designation
+        label: Volumes
       date:
         label: Digitization Date
       id:
@@ -364,11 +365,11 @@ en:
       description:
         label: Description
       date_range:
-        label: Date of Creation
+        label: Creation date(s)
       all_fields:
         label: All Fields
       serial_title:
-        label: Periodical / Newspaper Title
+        label: Collection
       archival_ref:
         label: Archival Reference
       summary:
@@ -389,7 +390,7 @@ en:
           sub_unit: Reel
           reel: Reel
       include_issues:
-        label: Include results from individual issues
+        label: Include results from individual reels
     sort:
       relevance:
         label: Relevance
@@ -441,9 +442,9 @@ en:
     L_LAC: Libraries and Archives Canada
     L_NEW : "What's New"
     L_READ_MORE: Read more
-    L_RECORD: About this Item
-    L_SERIAL_RECORD: About this Serial
-    L_AVAILABLE_ISSUES: Available Issues
+    L_RECORD: About this Reel
+    L_SERIAL_RECORD: About
+    L_AVAILABLE_ISSUES: Available reels
     L_FILTER_BY_DATE: Filter by Date
     L_DATE_FROM: From
     L_DATE_TO: To
@@ -458,7 +459,7 @@ en:
     L_SEARCH_BREADCRUMB: Collection search
     L_ALL_ISSUES: List of Issues
     L_VIEW_ISSUE: View Details
-    L_NO_ISSUES_MSG: No issues in this serial
+    L_NO_ISSUES_MSG: No reels in this collection
     L_TERMS: Terms of Service
     L_MATCHING_PAGES_PRE: Full text search hits for
     L_MATCHING_PAGES_SUF: in this item
