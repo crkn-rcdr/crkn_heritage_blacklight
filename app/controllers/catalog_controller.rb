@@ -258,7 +258,6 @@ class CatalogController < ApplicationController
                           if: ->(context, field_config, document) { context.helpers.rights_statement_present?(field_config, document) }
     config.add_show_field 'ark', label: ->(_f, _c) { I18n.t('blacklight.metadata.persistent_url.label') }, helper_method: :value_link
     config.add_show_field 'author_ssm', label: ->(_f, _c) { I18n.t('blacklight.metadata.creator.label') }, helper_method: :format_facet
-    config.add_show_field 'archival_ref_ssm', label: ->(_f, _c) { I18n.t('blacklight.metadata.archival_ref.label', default: 'Archival Reference') }, helper_method: :format_text
     config.add_show_field 'theme_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.theme.label', default: 'Themes') }, helper_method: :format_facet
     config.add_show_field 'varying_title_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.varying_title.label', default: 'Varying Form of Title') }, helper_method: :format_text
     config.add_show_field 'title_added_entry_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.title_added_entry.label', default: 'Added Title') }, helper_method: :format_text
