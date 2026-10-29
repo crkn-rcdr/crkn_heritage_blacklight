@@ -272,8 +272,6 @@ class CatalogController < ApplicationController
     config.add_show_field 'dates_or_sequential_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.dates_or_sequential.label') }, helper_method: :format_text
     config.add_show_field 'id', label: ->(_f, _c) { I18n.t('blacklight.metadata.id.label') }, helper_method: :format_identifier
     #config.add_show_field 'pub_date_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.date.label') }
-    config.add_show_field 'summary_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.summary.label') }, helper_method: :format_text
-    config.add_show_field 'finding_aid_ssm', label: ->(_f, _c) { I18n.t('blacklight.metadata.finding_aid.label') }, helper_method: :format_text
     config.add_show_field 'notes_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.notes.label') }, helper_method: :format_text
     config.add_show_field 'language_ssim', label: ->(_f, _c) { I18n.t('blacklight.metadata.language.label') }, helper_method: :format_facet
     config.add_show_field 'original_version_note_tsim', label: ->(_f, _c) { I18n.t('blacklight.metadata.original_version_note.label') }, helper_method: :format_text
