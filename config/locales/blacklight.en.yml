@@ -2,7 +2,6 @@
 en:
   blacklight:
     range_limit:
-      missing: "[No date recorded]"
       submit_limit: Submit Limit
       range_list_heading: Range List Heading
       range_begin: Range Start
@@ -85,7 +84,7 @@ en:
       or_html: " OR "
       page_title: Advanced search - %{application_name}
     and: and
-    application_name: Héritage Collection
+    application_name: Canadiana
     back_to_bookmarks: Back to Bookmarks
     back_to_search: Back to Search
     bookmarks:
@@ -182,7 +181,7 @@ en:
         group:
           close: Hide facets
           open: Show facets
-        missing: "[No date recorded]"
+        missing: "[Missing]"
         no_matches: "No matching items found."
         more_html: more <span class="visually-hidden">%{field_name}</span> »
         pivot:
@@ -220,7 +219,7 @@ en:
       page_title:
         constraint: "%{label}: %{value}"
         many_constraint_values: "%{values} selected"
-        title: "%{constraints} - %{application_name} - Search Results"
+        title: "%{constraints} - %{application_name} Search Results"
         joiner: " / "
       pagination:
         title: Results navigation
@@ -311,7 +310,7 @@ en:
       published:
         label: Published
       dates_or_sequential:
-        label: Volumes
+        label: Dates of Publication and/or Sequential Designation
       date:
         label: Digitization Date
       id:
@@ -340,18 +339,8 @@ en:
         label: Is a Serial Publication
       issue_msg:
         label: Is an Issue of a Serial Publication
-      theme:
-        label: Themes
       varying_title:
         label: Varying Form of Title
-      complex_linking_note:
-        label: Complex Linking Entry Note
-      title_added_entry:
-        label: Added Title
-      place_added_entry:
-        label: Associated Place
-      related_items:
-        label: Related Items
       date_added:
         label: Date Added/Updated
       language:
@@ -361,11 +350,11 @@ en:
       description:
         label: Description
       date_range:
-        label: Creation date(s)
+        label: Date of Creation
       all_fields:
         label: All Fields
       serial_title:
-        label: Collection
+        label: Periodical / Newspaper Title
       archival_ref:
         label: Archival Reference
       summary:
@@ -386,7 +375,7 @@ en:
           sub_unit: Reel
           reel: Reel
       include_issues:
-        label: Include results from individual reels
+        label: Include results from individual issues
     sort:
       relevance:
         label: Relevance
@@ -438,13 +427,24 @@ en:
     L_LAC: Libraries and Archives Canada
     L_NEW : "What's New"
     L_READ_MORE: Read more
-    L_RECORD: About this Reel
-    L_SERIAL_RECORD: About
-    L_AVAILABLE_ISSUES: Available reels
+    L_RECORD: About this Item
+    L_SERIAL_RECORD: About this Serial
+    L_AVAILABLE_ISSUES: Available Issues
+    L_FILTER_BY_DATE: Filter by Date
+    L_DATE_FROM: From
+    L_DATE_TO: To
+    L_FILTER_ACTION: Filter
+    L_CLEAR: Clear
+    L_CLEAR_FILTER: Clear date filter
+    L_JUMP_TO_YEAR: Jump to year
+    L_FILTERED: Filtered
+    L_FILTERED_FROM_TOTAL: "(filtered from %{total} total)"
+    L_NO_ISSUES_FOR_DATE_MSG: No issues found matching the selected date range.
+    L_VIEW_ALL_ISSUES: View all issues
     L_SEARCH_BREADCRUMB: Collection search
     L_ALL_ISSUES: List of Issues
     L_VIEW_ISSUE: View Details
-    L_NO_ISSUES_MSG: No reels in this collection
+    L_NO_ISSUES_MSG: No issues in this serial
     L_TERMS: Terms of Service
     L_MATCHING_PAGES_PRE: Full text search hits for
     L_MATCHING_PAGES_SUF: in this item

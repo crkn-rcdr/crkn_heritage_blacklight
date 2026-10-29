@@ -20,7 +20,7 @@
 
       <% if @component.to_s == 'div' %>
         <% breadcrumb_paths = helpers.collection_breadcrumb_paths(@document) %>
-        <% root_breadcrumb_label = I18n.locale.to_s.start_with?('fr') ? 'Collection Héritage - Résultats de recherche' : 'Héritage Collection - Search Results' %>
+        <% root_breadcrumb_label = I18n.locale.to_s.start_with?('fr') ? 'Collection Canadiana - Résultats de recherche' : 'Canadiana Collection - Search Results' %>
         <% root_breadcrumb_url = helpers.back_to_search_url %>
         <%
           has_serial = @document._source['is_issue']&.first == "Yes" && @document._source['serial_title']&.first.present?
@@ -92,7 +92,9 @@
           <% collection_items_comp = CollectionItemsComponent.new(
                documentId: @document._source['id'] || params[:id],
                page: params[:page] || 1,
-               per_page: 12
+               per_page: 12,
+               date_from: params[:date_from],
+               date_to: params[:date_to]
              ) %>
         <% end %>
         <div id="document-togglable-content" class="container-fluid">
@@ -105,8 +107,14 @@
               <% if @document._source["is_serial"]&.first == "Yes" %>
                 <% issue_count = collection_items_comp&.total_items || helpers.serial_issue_count(@document._source['id'] || params[:id]) %>
                 <div class="serial-available-issues mt-2 mb-3">
-                  <span class="citation-toolbar-title"><%= t('labels.L_AVAILABLE_ISSUES', default: 'Available reels') %>:</span>
+                  <span class="citation-toolbar-title"><%= t('labels.L_AVAILABLE_ISSUES', default: 'Available Issues') %>:</span>
                   <span class=""><%= number_with_delimiter(issue_count) %></span>
+                  <% if params[:date_from].present? || params[:date_to].present? %>
+                    <% total_all = helpers.serial_issue_count(@document._source['id'] || params[:id]) %>
+                    <small class="text-muted d-block mt-1">
+                      <%= t('labels.L_FILTERED_FROM_TOTAL', default: '(filtered from %{total} total)', total: number_with_delimiter(total_all)) %>
+                    </small>
+                  <% end %>
                 </div>
               <% end %>
               <% if @document._source["is_serial"]&.first != "Yes" %>
@@ -351,7 +359,9 @@
                 <%= render(collection_items_comp || CollectionItemsComponent.new(
                   documentId: @document._source['id'] || params[:id],
                   page: params[:page] || 1,
-                  per_page: 12
+                  per_page: 12,
+                  date_from: params[:date_from],
+                  date_to: params[:date_to]
                 )) %>
               <% end %>
             </div>
