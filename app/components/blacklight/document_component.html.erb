@@ -20,7 +20,7 @@
 
       <% if @component.to_s == 'div' %>
         <% breadcrumb_paths = helpers.collection_breadcrumb_paths(@document) %>
-        <% root_breadcrumb_label = I18n.locale.to_s.start_with?('fr') ? 'Collection Canadiana - Résultats de recherche' : 'Canadiana Collection - Search Results' %>
+        <% root_breadcrumb_label = t('blacklight.breadcrumbs.root_collection', default: (I18n.locale.to_s.start_with?('fr') ? 'Collection Héritage - Résultats de recherche' : 'Héritage Collection - Search Results')) %>
         <% root_breadcrumb_url = helpers.back_to_search_url %>
         <%
           has_serial = @document._source['is_issue']&.first == "Yes" && @document._source['serial_title']&.first.present?
