@@ -116,9 +116,9 @@ class CatalogController < ApplicationController
     config.add_facet_field 'pub_date_ssim',
                            label: ->(context) {
                              if CatalogController.heritage?(context)
-                               I18n.t('blacklight.metadata.date_range_heritage.label', default: 'Date of Creation')
+                               I18n.t('blacklight.metadata.date_range.label')
                              else
-                               I18n.t('blacklight.metadata.date_range.label', default: 'Publication Date')
+                               I18n.t('blacklight.metadata.date_range.label')
                              end
                            },
                            range: {

@@ -297,7 +297,7 @@ fr:
       creator:
         label: Créateur
       published:
-        label: Publication
+        label: Date(s) de création
       dates_or_sequential:
         label: Volumes
       date:

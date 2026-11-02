@@ -313,7 +313,7 @@ en:
       creator:
         label: Creator
       published:
-        label: Published
+        label: Date(s) of creation
       dates_or_sequential:
         label: Volumes
       date:
@@ -365,7 +365,7 @@ en:
       description:
         label: Description
       date_range:
-        label: Creation date(s)
+        label: Date(s) of creation
       all_fields:
         label: All Fields
       serial_title:
