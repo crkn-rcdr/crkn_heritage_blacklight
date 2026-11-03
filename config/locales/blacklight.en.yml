@@ -400,9 +400,9 @@ en:
       relevance:
         label: Relevance
       year_desc:
-        label: Published Date (newest to oldest)
+        label: Date(s) of creation (newest to oldest)
       year_asc:
-        label: Published Date (oldest to newest)
+        label: Date(s) of creation (oldest to newest)
       date_added_desc:
         label: Date Added (newest to oldest)
       date_added_asc:
@@ -459,10 +459,10 @@ en:
     L_JUMP_TO_YEAR: Jump to year
     L_FILTERED: Filtered
     L_FILTERED_FROM_TOTAL: "(filtered from %{total} total)"
-    L_NO_ISSUES_FOR_DATE_MSG: No issues found matching the selected date range.
-    L_VIEW_ALL_ISSUES: View all issues
+    L_NO_ISSUES_FOR_DATE_MSG: No reels found matching the selected date range.
+    L_VIEW_ALL_ISSUES: View all reels from
     L_SEARCH_BREADCRUMB: Collection search
-    L_ALL_ISSUES: List of Issues
+    L_ALL_ISSUES: List of Reels
     L_VIEW_ISSUE: View Details
     L_NO_ISSUES_MSG: No reels in this collection
     L_TERMS: Terms of Service

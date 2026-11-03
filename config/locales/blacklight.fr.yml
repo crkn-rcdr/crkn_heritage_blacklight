@@ -384,9 +384,9 @@ fr:
       relevance:
         label: Pertinence
       year_desc:
-        label: Date de publication (du plus récent au plus ancien)
+        label: Date(s) de création (du plus récent au plus ancien)
       year_asc:
-        label: Date de publication (de la plus ancienne à la plus récente)
+        label: Date(s) de création (de la plus ancienne à la plus récente)
       date_added_desc:
         label: Date d'ajout (du plus récent au plus ancien)
       date_added_asc:
@@ -443,11 +443,11 @@ fr:
     L_JUMP_TO_YEAR: Aller à l'année
     L_FILTERED: Filtré
     L_FILTERED_FROM_TOTAL: "(filtré sur un total de %{total})"
-    L_NO_ISSUES_FOR_DATE_MSG: Aucun numéro trouvé pour la période sélectionnée.
-    L_VIEW_ALL_ISSUES: Voir tous les numéros
+    L_NO_ISSUES_FOR_DATE_MSG: Aucune bobine correspondant à la plage de dates sélectionnée n’a été trouvée.
+    L_VIEW_ALL_ISSUES: Afficher toutes les bobines de
     L_SEARCH_BREADCRUMB: Recherche dans la collection
-    L_ALL_ISSUES: Liste des numéros
-    L_VIEW_ISSUE: Voir le numéro
+    L_ALL_ISSUES: Liste des bobines
+    L_VIEW_ISSUE: Voir les détails
     L_NO_ISSUES_MSG: Aucune bobine dans cette collection
     L_TERMS: Conditions de service
     L_MATCHING_PAGES_PRE: Résultats de la recherche en texte intégral pour
