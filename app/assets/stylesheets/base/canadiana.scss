@@ -69,10 +69,21 @@ body {
   overflow-x: hidden;
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#main-container {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
 .home-page {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #skip-link {
@@ -1648,6 +1659,16 @@ dialog#blacklight-modal,
   border: none !important;
   visibility: hidden !important;
 }
+
+.blacklight-catalog-show .pagination-search-widgets,
+.blacklight-catalog-show #appliedParams + .pagination-search-widgets {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0 !important;
+  border: none !important;
+  visibility: hidden !important;
+}
 /* Unified tools styling (IIIF + sidebar Tools) */
 .show-tools.card,
 .iiif-tools-list,
@@ -2974,11 +2995,17 @@ dialog#blacklight-modal,
   align-items: center;
   gap: 0.75rem;
   margin-top: 0.35rem;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .home-page .home-slider__viewport {
   flex: 1 1 auto;
-  overflow-x: auto;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  overflow-x: auto !important;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -4426,6 +4453,14 @@ dialog#blacklight-modal,
 }
 
 .blacklight-pages-home {
+  #main-container > .row.base-first-row {
+    --bs-gutter-x: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
   .base-first-row > section {
     padding: 0 !important;
   }
@@ -4756,9 +4791,9 @@ dialog#blacklight-modal,
 
 .home-page .home-canadiana-search__form:focus-within,
 .home-page .home-heritage-search__form:focus-within {
-  border-color: rgba(29, 128, 139, 0.45);
+  border-color: rgba(67, 136, 15, 0.45);
   box-shadow:
-    0 0 0 3px rgba(29, 128, 139, 0.12),
+    0 0 0 3px rgba(67, 136, 15, 0.12),
     0 10px 24px rgba(15, 24, 33, 0.08);
 }
 
@@ -5647,7 +5682,10 @@ html[lang="fr"] .home-page .home-hero__title {
   }
 
   .home-page .home-hero__cta {
-    width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     flex-basis: auto;
     justify-content: flex-start;
     font-size: 0.86rem;
@@ -5820,13 +5858,14 @@ html[lang="fr"] .home-page .home-hero__title {
   align-self: end;
   min-height: clamp(420px, 46vw, 820px);
   min-width: 0;
+  max-width: 100%;
   margin-left: clamp(-10rem, -10vw, -3.5rem);
   margin-right: clamp(-4rem, -4vw, -0.75rem);
   margin-bottom: 0;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  overflow: visible;
+  overflow: hidden;
   background: transparent;
   border: none;
 }
@@ -5836,7 +5875,7 @@ html[lang="fr"] .home-page .home-hero__title {
   right: 0;
   bottom: -1px;
   width: auto;
-  max-width: none;
+  max-width: 100%;
   height: 100%;
   max-height: none;
   margin: 0;
@@ -5856,17 +5895,21 @@ html[lang="fr"] .home-page .home-hero__title {
   }
 
   .home-page .home-statement-media {
-    margin-left: 0;
-    max-width: 720px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
     margin: 0 auto;
     min-height: clamp(220px, 44vw, 420px);
     justify-content: center;
+    overflow: hidden;
   }
 
   .home-page .home-statement-media img {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 100%;
   }
 }
 
@@ -7636,17 +7679,23 @@ html[lang="fr"] .home-page .home-hero__title {
   /* Mobile polish for Explore sliders (Canadiana + Heritage) */
   .home-page .home-explore .home-slider {
     display: grid;
-    grid-template-columns: 1fr auto auto 1fr;
+    grid-template-columns: minmax(0, 1fr) auto auto minmax(0, 1fr);
     grid-template-areas:
       "viewport viewport viewport viewport"
       ". prev next .";
     gap: 0.65rem 0.55rem;
     align-items: start;
     margin-top: 0.2rem;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
   }
 
   .home-page .home-explore .home-slider__viewport {
     grid-area: viewport;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
     padding: 0.1rem 0 0.3rem;
   }
 
@@ -7728,11 +7777,17 @@ html[lang="fr"] .home-page .home-hero__title {
 .home-page .home-explore-heritage .home-slider {
   gap: clamp(0.8rem, 1.3vw, 1rem);
   margin-top: 0;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .home-page .home-explore-canadiana .home-slider__viewport,
 .home-page .home-explore-heritage .home-slider__viewport {
   padding: 0.1rem 0 0.2rem;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
 }
 
 .home-page .home-explore-canadiana .home-slider__nav,
@@ -7901,6 +7956,16 @@ html[lang="fr"] .home-page .home-hero__title {
   .home-page .home-explore-canadiana .home-slider,
   .home-page .home-explore-heritage .home-slider {
     gap: 0.55rem;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .home-page .home-explore-canadiana .home-slider__viewport,
+  .home-page .home-explore-heritage .home-slider__viewport {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .home-page .home-explore-canadiana .home-slider__nav,
@@ -7918,6 +7983,7 @@ html[lang="fr"] .home-page .home-hero__title {
   .home-page .home-explore-canadiana .home-split-grid--slider .home-split-card,
   .home-page .home-explore-heritage .home-split-grid--slider .home-split-card {
     width: calc(100vw - 2rem);
+    max-width: 320px;
   }
 
   .home-page .home-explore-canadiana .home-split-card,
@@ -9956,8 +10022,8 @@ html[lang="fr"] .home-page .home-hero__title {
 
 .blacklight-pages-about_canadiana .about-canadiana-hero::before {
   background:
-    linear-gradient(180deg, rgba(11, 70, 79, 0.12) 0%, rgba(11, 70, 79, 0.12) 100%),
-    linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%);
+    linear-gradient(180deg, rgba(14, 58, 10, 0.16) 0%, rgba(14, 58, 10, 0.16) 100%),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .blacklight-pages-about_canadiana .about-canadiana-hero__layout {
@@ -11454,7 +11520,7 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
 
 .blacklight-catalog-index .catalog-search-hero__submit:hover,
 .blacklight-catalog-index .catalog-search-hero__submit:focus-visible {
-  background: #2d6d08;
+  background: #3f747e;
 }
 
 .blacklight-catalog-index .catalog-search-hero__applied-shell {
@@ -11919,6 +11985,7 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
   color: #338500 !important;
 }
 
+
 /* Sticky Feedback Banner at Bottom of Viewport */
 .feedback-sticky-banner {
   position: fixed;
@@ -11957,7 +12024,7 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
     margin: 0;
     white-space: normal !important;
     word-break: normal;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   &__link {
@@ -11985,17 +12052,17 @@ html[lang="fr"] .blacklight-pages-about_heritage .about-heritage-hero__title {
   }
 
   @media (max-width: 768px) {
-    padding: 0.6rem 0.75rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.82rem;
     line-height: 1.35;
 
     &__inner {
-      align-items: flex-start;
+      align-items: center;
       gap: 0.5rem;
     }
 
     &__close {
-      margin-top: 0.15rem;
+      margin-top: 0;
     }
   }
 }
@@ -12009,3 +12076,4 @@ body.has-feedback-banner {
     padding-bottom: 6rem;
   }
 }
+
